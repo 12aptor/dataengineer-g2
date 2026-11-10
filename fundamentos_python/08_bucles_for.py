@@ -1,7 +1,12 @@
-lista = ["Python", "Rust", "Java", "C++", "Typescript"]
+lista = ["Python", "Rust", "Java", "C++", "Typescript"] # Puede mutar
+tupla = ("Ruby", "Go", "C#", "Rust", "JavaScript") # No puede mutar
 
 """ Recorrer una lista """
 for lenguaje in lista:
+    print(lenguaje)
+
+""" Recorrer una tupla """
+for lenguaje in tupla:
     print(lenguaje)
 
 """ Recorrer cadenas de texto """
