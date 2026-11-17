@@ -1,10 +1,11 @@
 """ Recuperar la información de datos.csv y construir una lista de
 diccionario con estos datos, ademas se debe ordenar por orden alfabetico
 en base a los apellidos, tambien se les debe generar una contraseña
-encriptada por defecto en base a la fecha de nacimiento """
+encriptada por defecto en base a la fecha de registro """
 # Output [{"id": 1, "nombre": "...", ..., "activo": true}, {}, ..., {}]
 
 import csv
+import hashlib
 
 class Usuario:
     def __init__(
@@ -28,6 +29,11 @@ class Usuario:
         self.pais = pais
         self.fecha_registro = fecha_registro
         self.activo = activo
+        self.password = self.__generar_password_encriptada()
+
+    def __generar_password_encriptada(self):
+        fecha_registro_bytes = self.fecha_registro.encode("utf-8")
+        return hashlib.sha256(fecha_registro_bytes).hexdigest()
 
     def to_dict(self):
         return {
@@ -39,7 +45,8 @@ class Usuario:
             "ciudad": self.ciudad,
             "pais": self.pais,
             "fecha_registro": self.fecha_registro,
-            "activo": self.activo
+            "activo": self.activo,
+            "password": self.password
         }
 
 def main():
