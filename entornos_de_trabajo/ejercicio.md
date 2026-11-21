@@ -6,6 +6,7 @@ El área comercial tiene un archivo facturacion.csv con los montos facturados y 
 de cada cliente, pero no tiene sus datos de contacto ni ubicación. Por otro lado, el sistema central expone los datos maestros de los usuarios a través de una API REST.
 
 ## Objetivo
+
 Contruir un pipeline en Python aplicando POO para cruzar ambas fuentes de datos, limpiar inconsistencias y generar un reporte ejecutivo en consola usando ´rich´
 
 1. Generar una lista de datos en un documento .csv ejecutando ´python generar_datos.py´
